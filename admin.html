@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form id="adminForm">
+      <input type="email" id="adminEmail" placeholder="Email" required />
+      
+      <input type="password" id="adminPassword" placeholder="Password" required />
+
+      <label style="margin: 5px 0; font-size: 14px;">
+        <input type="checkbox" id="showPassword" /> Show Password
+      </label>
+
+      <button type="submit" class="btn btn-admin">Login</button>
+      <p id="errorMsg" style="color: red; margin-top: 10px;"></p>
+    </form>
+  </div>
+
+  <script>
+    const adminForm = document.getElementById('adminForm');
+    const errorMsg = document.getElementById('errorMsg');
+    const showPassword = document.getElementById('showPassword');
+    const passwordInput = document.getElementById('adminPassword');
+
+    // Dummy valid credentials (can replace with backend later)
+    const validEmail = "jalalabbu83@gmail.com";
+    const validPassword = "Aryan@9139";
+
+    adminForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('adminEmail').value;
+      const password = passwordInput.value;
+
+      if (email === validEmail && password === validPassword) {
+        window.location.href = "dashboard.html"; // redirect
+      } else {
+        errorMsg.textContent = "Invalid user";
+      }
+    });
+
+    showPassword.addEventListener('change', function () {
+      passwordInput.type = this.checked ? "text" : "password";
+    });
+  </script>
+</body>
+</html>
