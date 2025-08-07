@@ -1,37 +1,11 @@
-:root {
-  --alice-blue:       #edf2fbff;
-  --lavender-web:     #e2eafcff;
-  --lavender-web-2:   #d7e3fcff;
-  --periwinkle:       #ccdbfdff;
-  --periwinkle-2:     #c1d3feff;
-  --periwinkle-3:     #b6ccfeff;
-  --jordy-blue:       #abc4ffff;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(-45deg,
-    var(--alice-blue),
-    var(--lavender-web),
-    var(--lavender-web-2),
-    var(--periwinkle),
-    var(--periwinkle-2),
-    var(--periwinkle-3),
-    var(--jordy-blue)
-  );
-  background-size: 400% 400%;
+  background: 
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url("login.jpg");  /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   animation: gradientShift 20s ease infinite;
   display: flex;
   justify-content: center;
